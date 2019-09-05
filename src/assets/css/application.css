@@ -1,3 +1,43 @@
 body {
     padding-top: 54px;
+    
+  }
+  
+ #head-color{
+   background-color: #3c3e47;
+ }
+
+  .display-3{
+    color:aqua;
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .lead{
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .card-title{
+    color: #3c3e47;
+  }
+  .card-text{
+    color: #3c3e47;
+    font-size: 13px;
+  }
+  #sign-up-btn{
+    background-color: aqua;
+    color: #3c3e47;
+    font-size: 14px;
+    border: 1px #3c3e47;
+    
+  }
+  #blocip-font{
+    color:white;
+    opacity: 0.6;
+    font-size: 14px;
+  }
+  .nav-link{
+    font-size: 14px;
   }
