@@ -21,11 +21,11 @@ module.exports = {
     })
     .then((user) => {
       const msg = {
-        to: 'test@example.com',
-        from: 'test@example.com',
-        subject: 'Sending with Twilio SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        to: newUser.email,
+	      from: 'testUser@example.com',
+        subject: 'User Confirmation',
+        text: 'blocipedia',
+        html: '<strong>Please login</strong>',
       };
       sgMail.send(msg);
       callback(null, user);
