@@ -1,4 +1,9 @@
 /node_modules
+<<<<<<< HEAD
 .env
 sendgrid.env
 
+=======
++.env
+sendgrid.env
+>>>>>>> checkpoint_user_sign_up
