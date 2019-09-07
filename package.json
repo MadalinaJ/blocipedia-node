@@ -15,7 +15,8 @@
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^3.4.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "sequelize-cli": "^5.5.1"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.4.0",
