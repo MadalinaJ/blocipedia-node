@@ -22,7 +22,7 @@ module.exports = {
     .then((user) => {
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
-       to: newUser.email,
+       to: newUser.email,   //'madalina.jantea@gmail.com'
 	     from: 'madalina.jantea@gmail.com',
         subject: 'User Confirmation',
         text: 'blocipedia',
