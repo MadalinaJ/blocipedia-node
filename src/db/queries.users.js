@@ -23,7 +23,7 @@ module.exports = {
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
        to: newUser.email,
-	     from: 'testUser@example.com',
+	     from: 'madalina.jantea@gmail.com',
         subject: 'User Confirmation',
         text: 'blocipedia',
        html: '<strong>Please login</strong>',
