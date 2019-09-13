@@ -1,5 +1,5 @@
 const userQueries = require("../db/queries.users.js");
- const passport = require("passport");
+const passport = require("passport");
 
  module.exports = {
   signUp(req, res, next) {
@@ -39,6 +39,7 @@ const userQueries = require("../db/queries.users.js");
       } else {
         req.flash("notice", "You've successfully signed in!");
         res.redirect("/");
+        //res.redirect("/wikis");
       }
     })
   },

@@ -20,7 +20,7 @@ module.exports = {
 
   validateSigninUsers(req, res, next) {
     if(req.method === "POST") {
-      req.checkBody("username", "must be valid").exists();
+      req.checkBody("username", "must be valid").exists();//not isLength()
       req.checkBody("email", "must be valid").isEmail();
       req.checkBody("password", "must match password provided").matches(req.body.password);
     }
