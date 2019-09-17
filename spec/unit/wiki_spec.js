@@ -4,15 +4,62 @@ const User = require("../../src/db/models").User;
 
 describe("Wiki", () => {
     beforeEach((done) => {
-        sequelize.sync({force: true})
-        .then(() => {
-            done();
+
+        this.user;
+        this.wiki;
+
+        sequelize.sync({force: true}).then((res) => {
+
+            User.create({
+                username: "user_name",
+                email: "user@example.com",
+                password: "password",
+                role: "standard"
+              })
+        .then((user) => {
+            this.user = user; //store the user
+
+            Wiki.create({
+                title: "Dogs" ,
+                body: "There are a lot of them",
+                userId: user.id,
+                private: false
+              })
+              .then((wiki) => {
+                this.wiki = wiki;
+                done();
+            })
         })
-        .catch((err) => {
-            console.log(err);
-            done();
-        });
-    });
+      })
+     });
+
+
+    describe("routes : wikis", () => {
+
+        beforeEach((done) => {
+          this.user;
+          this.wiki;
+          sequelize.sync({force: true}).then((res) => {
+            User.create({
+              username: "user_name",
+              email: "user@example.com",
+              password: "password",
+              role: "standard"
+            })
+            .then((user) => {
+              this.user = user;
+              request.get({
+                url: "http://localhost:3000/auth/fake",
+                form: {
+                  id: user.id,
+                  username: user.name,
+                  email: user.email,
+                  role:user.role,
+                }
+              });
+      
+
+
 
     describe("#create()", () => {
         it("should create a private Wiki object with a valid title and body", (done) => {
@@ -96,3 +143,7 @@ describe("Wiki", () => {
             });
         });
 });
+          });
+        });
+    });
+})

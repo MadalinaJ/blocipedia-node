@@ -1,3 +1,4 @@
+require("dotenv").config();
 const User = require("./models").User;
 const bcrypt = require("bcryptjs");
 
@@ -26,7 +27,7 @@ module.exports = {
 	     from: 'madalina.jantea@gmail.com',
         subject: 'User Confirmation',
         text: 'blocipedia',
-       html: '<strong>Please login</strong>',
+       html: '<strong>Please login to confirm membership</strong>',
       };
       sgMail.send(msg);
       callback(null, user);
