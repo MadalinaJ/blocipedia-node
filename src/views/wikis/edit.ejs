@@ -24,6 +24,15 @@
           <textarea rows="4" class="form-control" name="body" placeholder="Enter Wiki Body"><%= wiki.body %></textarea>
           <small class="text-muted" id="titleHelp">body must be 10 or more characters in length.</small>
         </div>
+
+        <% if((currentUser && (currentUser.role === "admin" || currentUser.role === "premium")) && wiki.userId === currentUser.id){ %>
+          <label for="private">Make wiki private?</label>
+          <select class="form-control" name="private">
+            <option value="true">Private Wiki</option>
+            <option value="false">Public Wiki</option>
+          </select>
+        <% } %>
+
         <button type="submit" class="btn btn-primary">Update</button>
       </form>
     </main>

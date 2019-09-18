@@ -11,6 +11,7 @@
       <% include ../static/partials/messages.ejs %>
       
       <h1><%= wiki.title %></h1>    
+      
       <% if(currentUser) { %>
         <a href="/wikis/<%= wiki.id %>/edit" class="btn btn-warning">Edit</a>
         <form style="display:initial" action="/wikis/<%= wiki.id %>/destroy" method="post">

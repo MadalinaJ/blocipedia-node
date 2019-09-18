@@ -3,6 +3,7 @@ const passport = require("passport");
 const secretKey = process.env.SECRET_KEY;
 const publishableKey = process.env.PUBLISHABLE_KEY;
 const stripe = require("stripe")(secretKey);
+
  module.exports = {
   signUp(req, res, next) {
     res.render("users/sign_up");
@@ -76,6 +77,7 @@ const stripe = require("stripe")(secretKey);
 
   downgrade(req, res, next){
     userQueries.downgrade(req.user.dataValues.id);
+    wikiQueries.downgradePrivateWikis(req.user.dataValues.id);
     req.flash("notice", "You are no longer a premium user!");
     res.redirect("/");
   }
