@@ -20,7 +20,7 @@ router.get("/users/downgrade", userController.downgrade); //
 
 router.post("/users/:id/downgrade", userController.downgrade);
 
-
+router.get("/users/collaborations", userController.showCollaborations);
 module.exports = router;
 
 

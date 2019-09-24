@@ -1,10 +1,14 @@
 module.exports = class ApplicationPolicy {
 
-    constructor(user, record) {
+    constructor(user, record, collaborators) {
       this.user = user;
       this.record = record;
     }
   
+    _isOwner() {
+      return this.record && (this.record.userId == this.user.id);
+    }
+
     _isStandard() {
       return this.user && this.user.role == "standard";
     }
@@ -28,12 +32,22 @@ module.exports = class ApplicationPolicy {
     show() {
       return true;
     }
+
+    edit(){
+      if (this.record.private == false) {
+          return this.new() &&
+            this.record && (this._isStandard() || this._isPremium() || this._isAdmin());
+          } else if (this.record.private == true) {
+            return this.new() &&
+              this.record && (this._isPremium()  || this._isAdmin() || this._isStandard());
+          }
+  }
   
-    edit() {
-      return this.new() &&
-        this.record && (this._isOwner() || this._isStandard());
-        this.record && (this._isOwner() || this._isAdmin());
-    }
+    // edit() {
+    //   return this.new() &&
+    //     this.record && (this._isOwner() || this._isStandard());
+    //     this.record && (this._isOwner() || this._isAdmin());
+    // }
   
     update() {
       return this.edit();
@@ -41,6 +55,9 @@ module.exports = class ApplicationPolicy {
   
     destroy() {
       return this.update();
+    }
+    showCollaborators() {
+      return this.edit();
     }
   }
   

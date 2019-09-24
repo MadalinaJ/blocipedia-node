@@ -1,7 +1,8 @@
 require("dotenv").config();
 const User = require("./models").User;
+const Wiki = require("./models").Wiki;
 const bcrypt = require("bcryptjs");
-
+const Collaborator = require('./models').Collaborator;
 const sgMail = require('@sendgrid/mail');
 //sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -36,6 +37,28 @@ module.exports = {
       callback(err);
     })
   },
+
+  getUser(id, callback){
+    let result = {};
+    User.findByPk(id)
+    .then((user) => {
+      if(!user){
+        callback(404);
+      } else {
+        result["user"] = user;
+        Collaborator.scope({method: ["collaboratorFor", id]}).findAll()
+        .then((collaborator) => {
+          result["collaborator"] = collaborator;
+          callback(null, result);
+        })
+        .catch((err) => {
+          callback(err);
+  
+        })
+      }
+    })
+  },
+
 
   upgrade(id, callback){
     return User.findByPk(id)

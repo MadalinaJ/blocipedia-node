@@ -1,4 +1,5 @@
 const userQueries = require("../db/queries.users.js");
+const wikiQueries = require("../db/queries.wikis.js");
 const passport = require("passport");
 const secretKey = process.env.SECRET_KEY;
 const publishableKey = process.env.PUBLISHABLE_KEY;
@@ -80,5 +81,17 @@ const stripe = require("stripe")(secretKey);
     wikiQueries.downgradePrivateWikis(req.user.dataValues.id);
     req.flash("notice", "You are no longer a premium user!");
     res.redirect("/");
+  },
+  showCollaborations(req, res, next){
+    userQueries.getUser(req.user.id, (err, result) => {
+      user = result["user"];
+      collaborator = result["collaborator"];
+      if(err || user == null){
+        res.redirect(404, "/");
+      } else {
+        res.render("users/collaborations", {user, collaborator});
+      }
+    });
   }
- }
+
+}
