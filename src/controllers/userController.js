@@ -25,7 +25,7 @@ const stripe = require("stripe")(secretKey);
 
          passport.authenticate("local")(req, res, () => {
            req.flash("notice", "You've successfully signed in!");
-           res.redirect("/");
+           res.redirect("/wikis");
          })
        }
      });
@@ -42,7 +42,7 @@ const stripe = require("stripe")(secretKey);
         res.redirect("/users/sign_in");
       } else {
         req.flash("notice", "You've successfully signed in!");
-        res.redirect("/");
+        res.redirect("/wikis");
         //res.redirect("/wikis");
       }
     })

@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <% include ./partials/head.ejs %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
   </head>
   <body>
 
@@ -12,36 +15,42 @@
       <main class="container">
 
         <!-- Jumbotron Header -->
-        <header id="head-color" class="jumbotron my-4">
-          <h1 class="display-3">Welcome to Blocipedia</h1>
+        <header id="head-color" class="jumbotron my-5">
+          <h1 class="display-3">Blocipedia</h1>
           <p class="lead">An application for users to create, collaborate and share wikis.</p>
           <a href="/users/sign_up" id="sign-up-btn" class="btn btn-primary btn-lg">Sign up</a>
         </header>
-
+        
         <!-- Page Features -->
+        <!-- <section class="page-section"> -->
         <section class="row text-center">
 
           <section class="col-lg-4">
             <h4 class="card-title">Create</h4>
-            <p class="card-text">Your own content.</p>
+            <p class="card-text"> Find your groove and create your own content.</p>
           </section>
 
           <section class="col-lg-4">
             <h4 class="card-title">Collaborate</h4>
-            <p class="card-text">On a project!</p>
+            <p class="card-text">The right choice as it allows you 
+              to keep all your content and knowledge private/public and accessible to selected people only.</p>
           </section>
 
           <section class="col-lg-4">
             <h4 class="card-title">Share</h4>
-            <p class="card-text">The wikis that are important to you!</p>
+            <p class="card-text">The wikis that are important to you! Promote a culture of friendly collaboration!</p>
           </section>
 
         </section>
+      <!-- </section> -->
         <!-- /.row -->
 
       </main>
       <!-- /.container -->
 
       <% include ./partials/baseScripts.ejs %>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>

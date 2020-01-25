@@ -1,39 +1,56 @@
 body {
     padding-top: 54px;
+    background-image: url("/img/belinda-fewings-6wAGwpsXHE0-unsplash.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: rgb(74, 135, 226);
     
   }
   
- #head-color{
-   background-color: #3c3e47;
+  /* .container {
+    display:block;    
+    width: 100%;
+    background-color: rgba(98, 116, 116, 0.329);
+  } */
+ #head-color{ 
+  background-color: rgba(46, 110, 247, 0.521);
    
-
  }
 
-  .display-3{
-    color:aqua;
-    font-size: 42px;
+  .display-3 {
+    color:white;
+ 
+    font-size: 44px;
+    font-weight: bolder;
     text-align: center;
+    
   }
 
   .lead{
     color: white;
-    font-size: 16px;
+    font-size: 24px;
     text-align: center;
+    background-color: #05ad7515;
   }
 
   .card-title{
-    color: #3c3e47;
+    color: rgb(76, 34, 131);
+    background-color: white;
   }
   .card-text{
-    color: #3c3e47;
-    font-size: 13px;
+    color: white;
+    font-size: 22px;
+    background-color: rgba(255, 255, 255, 0);
+    
   }
   #sign-up-btn{
     background-color: aqua;
-    color: #3c3e47;
+    color: rgb(164, 104, 212);
     font-size: 14px;
     border: 1px #3c3e47;
-    
+  }
+  #sign-up-btn :hover{
+    color: rgb(164, 104, 212);
   }
   #blocip-font{
     color:white;
@@ -43,3 +60,75 @@ body {
   .nav-link{
     font-size: 14px;
   }
+
+  .page-section {
+    padding-top: 0px;
+    background-color: rgba(66, 231, 140, 0);
+  }
+  .row {
+    padding-top: 0px;
+border-color: white;
+
+  }
+  
+  .btn{
+    background-color:rgb(164, 104, 212);
+    border-color: aqua;
+    color: aqua;
+  }
+.btn:hover{
+  background-color: rgb(12, 231, 231);
+  border-color: white;
+  }
+  p {
+    color:rgb(164, 104, 212);
+    background-color: white; 
+  }
+  #p-wikis {
+    color:rgb(164, 104, 212);
+    background-color: white; 
+  }
+  h1 {
+    padding-top: 40px;
+    font-size: 27px;
+    color:white;
+  }
+  .lead{
+    color:rgb(164, 104, 212);
+    background-color: white;
+  }
+  h2{
+    color:white;
+  }
+  
+  .form-group{
+    color:white;
+  }
+.text-primary {
+    background-color:rgba(255, 255, 255, 0.473);
+  }
+  label {
+    color: white;
+  }
+  ul >li {
+    color:white;
+    font-size: 18px;
+    
+  }
+  .user-upgrade{
+    padding-top: 30px;
+    background-color:rgba(204, 22, 98, 0.774);
+  }
+
+  .main-page{
+   color:white;
+  }
+  .alert{
+    background-color: #05ad75;
+    border-color: white;
+  }
+  
+  .col-lg-4 {  
+    background-color: rgba(46, 110, 247, 0.521);
+  }
+  

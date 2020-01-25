@@ -18,12 +18,12 @@
           <label for="title">Wiki Title</label>
 
           <input value="<%= wiki.title %>" type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
-          <small class="text-muted" id="titleHelp">title must be 5 or more characters in length.</small>
+          <normal class="text-primary" id="titleHelp">title must be 5 or more characters in length.</small>
         </div>
         <div class="form-group">
           <label for="body">Body</label>
           <textarea rows="4" class="form-control" name="body" placeholder="Enter Wiki Body"><%= wiki.body %></textarea>
-          <small class="text-muted" id="titleHelp">body must be 10 or more characters in length.</small>
+          <normal class="text-primary" id="titleHelp">body must be 10 or more characters in length.</small>
         </div>
 
         <% if((currentUser && (currentUser.role === "admin" || currentUser.role === "premium")) && wiki.userId === currentUser.id){ %>
