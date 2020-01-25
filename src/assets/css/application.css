@@ -20,7 +20,7 @@ body {
   .display-3 {
     color:white;
  
-    font-size: 44px;
+    font-size: 38px;
     font-weight: bolder;
     text-align: center;
     
@@ -35,11 +35,12 @@ body {
 
   .card-title{
     color: rgb(76, 34, 131);
+    font-size: 20px;
     background-color: white;
   }
   .card-text{
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     background-color: rgba(255, 255, 255, 0);
     
   }
